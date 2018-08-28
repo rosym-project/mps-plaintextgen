@@ -41,6 +41,10 @@
         <child id="8618885170173601778" name="tail" index="2Ry0An" />
       </concept>
       <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
+      <concept id="7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" flags="ng" index="3981dG" />
+      <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
+        <child id="4380385936562148502" name="containerName" index="Nbhlr" />
+      </concept>
       <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT" />
       <concept id="7389400916848153117" name="jetbrains.mps.build.structure.BuildSourceMacroRelativePath" flags="ng" index="398BVA">
         <reference id="7389400916848153130" name="macro" index="398BVh" />
@@ -67,6 +71,9 @@
       </concept>
       <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
         <property id="4903714810883755350" name="text" index="3MwjfP" />
+      </concept>
+      <concept id="4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" flags="ng" index="3Mxwey">
+        <reference id="4903714810883702018" name="macro" index="3Mxwex" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -145,6 +152,22 @@
       </node>
     </node>
     <node concept="1l3spV" id="2NTGYE$JTHf" role="1l3spN">
+      <node concept="3981dG" id="7uNQWUftVYp" role="39821P">
+        <node concept="3_J27D" id="7uNQWUftVYr" role="Nbhlr">
+          <node concept="3Mxwew" id="7uNQWUftVYJ" role="3MwsjC">
+            <property role="3MwjfP" value="plaintextgen-2018.2--" />
+          </node>
+          <node concept="3Mxwey" id="1BxwJuSIlE3" role="3MwsjC">
+            <ref role="3Mxwex" to="ffeo:3IKDaVZnAxg" resolve="build.number" />
+          </node>
+          <node concept="3Mxwew" id="1BxwJuSIlD8" role="3MwsjC">
+            <property role="3MwjfP" value=".zip" />
+          </node>
+        </node>
+        <node concept="m$_wl" id="7uNQWUftVYL" role="39821P">
+          <ref role="m_rDy" node="2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
+        </node>
+      </node>
       <node concept="m$_wl" id="2NTGYE$JTHj" role="39821P">
         <ref role="m_rDy" node="2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
       </node>
@@ -158,7 +181,7 @@
       </node>
       <node concept="3_J27D" id="2NTGYE$JTH9" role="m$_w8">
         <node concept="3Mxwew" id="2NTGYE$JTHa" role="3MwsjC">
-          <property role="3MwjfP" value="2018.1" />
+          <property role="3MwjfP" value="2018.2" />
         </node>
       </node>
       <node concept="m$f5U" id="2NTGYE$JTHb" role="m$_yh">
@@ -184,13 +207,13 @@
         <node concept="2pNUuL" id="2aMbqeN3MX5" role="2pNNFR">
           <property role="2pNUuO" value="until-build" />
           <node concept="2pMdtt" id="2aMbqeN3MXg" role="2pMdts">
-            <property role="2pMdty" value="182.1" />
+            <property role="2pMdty" value="183.0" />
           </node>
         </node>
         <node concept="2pNUuL" id="2aMbqeN3MXk" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
           <node concept="2pMdtt" id="2aMbqeN3MXx" role="2pMdts">
-            <property role="2pMdty" value="181.1" />
+            <property role="2pMdty" value="182.0" />
           </node>
         </node>
       </node>
