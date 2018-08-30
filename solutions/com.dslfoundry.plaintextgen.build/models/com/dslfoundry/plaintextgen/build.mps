@@ -77,8 +77,18 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
@@ -155,7 +165,13 @@
       <node concept="3981dG" id="7uNQWUftVYp" role="39821P">
         <node concept="3_J27D" id="7uNQWUftVYr" role="Nbhlr">
           <node concept="3Mxwew" id="7uNQWUftVYJ" role="3MwsjC">
-            <property role="3MwjfP" value="plaintextgen-2018.2--" />
+            <property role="3MwjfP" value="plaintextgen-" />
+          </node>
+          <node concept="3Mxwey" id="2oKmwkPTchx" role="3MwsjC">
+            <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
+          </node>
+          <node concept="3Mxwew" id="2oKmwkPTchw" role="3MwsjC">
+            <property role="3MwjfP" value="--" />
           </node>
           <node concept="3Mxwey" id="1BxwJuSIlE3" role="3MwsjC">
             <ref role="3Mxwex" to="ffeo:3IKDaVZnAxg" resolve="build.number" />
@@ -168,8 +184,12 @@
           <ref role="m_rDy" node="2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
         </node>
       </node>
-      <node concept="m$_wl" id="2NTGYE$JTHj" role="39821P">
-        <ref role="m_rDy" node="2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
+      <node concept="1X3_iC" id="2oKmwkPTgqU" role="lGtFl">
+        <property role="3V$3am" value="children" />
+        <property role="3V$3ak" value="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003/7389400916848037006" />
+        <node concept="m$_wl" id="2NTGYE$JTHj" role="8Wnug">
+          <ref role="m_rDy" node="2NTGYE$JTH6" resolve="com.dslfoundry.plaintextgen" />
+        </node>
       </node>
     </node>
     <node concept="m$_wf" id="2NTGYE$JTH6" role="3989C9">
