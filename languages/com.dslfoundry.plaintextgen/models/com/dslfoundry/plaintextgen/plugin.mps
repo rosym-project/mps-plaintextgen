@@ -5,6 +5,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="4" />
     <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="2" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -209,11 +210,8 @@
         <child id="1144231399730" name="condition" index="1Dwp0S" />
         <child id="1144231408325" name="iteration" index="1Dwrff" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -229,11 +227,10 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
+      <concept id="6332851714983831325" name="jetbrains.mps.baseLanguage.logging.structure.MsgStatement" flags="ng" index="2xdQw9">
+        <property id="6332851714983843871" name="severity" index="2xdLsb" />
+        <child id="5721587534047265374" name="message" index="9lYJi" />
+        <child id="5721587534047265375" name="throwable" index="9lYJj" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -278,6 +275,14 @@
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -496,14 +501,13 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="4TtYrYGuXoi" role="TDEfX">
-                  <node concept="34ab3g" id="3bf11hdNZKF" role="3cqZAp">
-                    <property role="35gtTG" value="error" />
-                    <property role="34fQS0" value="true" />
-                    <node concept="Xl_RD" id="3bf11hdNZKH" role="34bqiv">
-                      <property role="Xl_RC" value="Pasting from clipboard went wrong!" />
-                    </node>
-                    <node concept="37vLTw" id="3bf11hdNZKJ" role="34bMjA">
+                  <node concept="2xdQw9" id="62bw8DmbZG7" role="3cqZAp">
+                    <property role="2xdLsb" value="gZ5fh_4/error" />
+                    <node concept="37vLTw" id="62bw8DmbZGb" role="9lYJj">
                       <ref role="3cqZAo" node="4TtYrYGuXoo" resolve="ex" />
+                    </node>
+                    <node concept="Xl_RD" id="62bw8DmbZJA" role="9lYJi">
+                      <property role="Xl_RC" value="Pasting from clipboard went wrong!" />
                     </node>
                   </node>
                 </node>
@@ -876,8 +880,46 @@
                   <node concept="9aQIb" id="KbPw5FcEfp" role="9aQIa">
                     <node concept="3clFbS" id="KbPw5FcEfq" role="9aQI4">
                       <node concept="3SKdUt" id="KbPw5Fc4iO" role="3cqZAp">
-                        <node concept="3SKdUq" id="KbPw5Fc4iQ" role="3SKWNk">
-                          <property role="3SKdUp" value="MPS text fields strip away the tabs, so we replace them by spaces." />
+                        <node concept="1PaTwC" id="62bw8DmcDe1" role="3ndbpf">
+                          <node concept="3oM_SD" id="62bw8DmcDe2" role="1PaTwD">
+                            <property role="3oM_SC" value="MPS" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe3" role="1PaTwD">
+                            <property role="3oM_SC" value="text" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe4" role="1PaTwD">
+                            <property role="3oM_SC" value="fields" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe5" role="1PaTwD">
+                            <property role="3oM_SC" value="strip" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe6" role="1PaTwD">
+                            <property role="3oM_SC" value="away" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe7" role="1PaTwD">
+                            <property role="3oM_SC" value="the" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe8" role="1PaTwD">
+                            <property role="3oM_SC" value="tabs," />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDe9" role="1PaTwD">
+                            <property role="3oM_SC" value="so" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDea" role="1PaTwD">
+                            <property role="3oM_SC" value="we" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDeb" role="1PaTwD">
+                            <property role="3oM_SC" value="replace" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDec" role="1PaTwD">
+                            <property role="3oM_SC" value="them" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDed" role="1PaTwD">
+                            <property role="3oM_SC" value="by" />
+                          </node>
+                          <node concept="3oM_SD" id="62bw8DmcDee" role="1PaTwD">
+                            <property role="3oM_SC" value="spaces." />
+                          </node>
                         </node>
                       </node>
                       <node concept="3cpWs8" id="KbPw5FcDep" role="3cqZAp">
@@ -1364,41 +1406,6 @@
             </node>
             <node concept="37vLTw" id="pWUoI9j4xE" role="3uHU7w">
               <ref role="3cqZAo" node="pWUoI9gBdb" resolve="row" />
-            </node>
-          </node>
-        </node>
-        <node concept="1X3_iC" id="2jBmyzyBX_T" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="34ab3g" id="pWUoI9iLbo" role="8Wnug">
-            <property role="35gtTG" value="info" />
-            <node concept="2YIFZM" id="pWUoI9iLOy" role="34bqiv">
-              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-              <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-              <node concept="Xl_RD" id="pWUoI9iM1C" role="37wK5m">
-                <property role="Xl_RC" value="row: %d, column: %d, string: %s, Matrix: %d, LastColumn: %d" />
-              </node>
-              <node concept="37vLTw" id="pWUoI9iMbE" role="37wK5m">
-                <ref role="3cqZAo" node="pWUoI9gBdb" resolve="row" />
-              </node>
-              <node concept="37vLTw" id="pWUoI9iMfN" role="37wK5m">
-                <ref role="3cqZAo" node="pWUoI9gBdn" resolve="column" />
-              </node>
-              <node concept="37vLTw" id="pWUoI9iMnp" role="37wK5m">
-                <ref role="3cqZAo" node="pWUoI9gBkw" resolve="word" />
-              </node>
-              <node concept="2OqwBi" id="pWUoI9iUH3" role="37wK5m">
-                <node concept="37vLTw" id="pWUoI9iUw7" role="2Oq$k0">
-                  <ref role="3cqZAo" node="pWUoI9gAX7" resolve="Matrix" />
-                </node>
-                <node concept="34oBXx" id="pWUoI9iV5H" role="2OqNvi" />
-              </node>
-              <node concept="2OqwBi" id="pWUoI9iVx0" role="37wK5m">
-                <node concept="37vLTw" id="pWUoI9iVfO" role="2Oq$k0">
-                  <ref role="3cqZAo" node="pWUoI9gBBu" resolve="LastColumn" />
-                </node>
-                <node concept="34oBXx" id="pWUoI9iVXG" role="2OqNvi" />
-              </node>
             </node>
           </node>
         </node>
