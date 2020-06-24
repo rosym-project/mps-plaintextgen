@@ -72,9 +72,6 @@
       <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
         <property id="4903714810883755350" name="text" index="3MwjfP" />
       </concept>
-      <concept id="4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" flags="ng" index="3Mxwey">
-        <reference id="4903714810883702018" name="macro" index="3Mxwex" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -157,19 +154,7 @@
       <node concept="3981dG" id="62bw8DmfoEu" role="39821P">
         <node concept="3_J27D" id="62bw8DmfoEv" role="Nbhlr">
           <node concept="3Mxwew" id="62bw8DmfoEy" role="3MwsjC">
-            <property role="3MwjfP" value="plaintextgen-" />
-          </node>
-          <node concept="3Mxwey" id="62bw8DmfoEA" role="3MwsjC">
-            <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
-          </node>
-          <node concept="3Mxwew" id="62bw8DmfoEE" role="3MwsjC">
-            <property role="3MwjfP" value="--" />
-          </node>
-          <node concept="3Mxwey" id="62bw8DmfoEI" role="3MwsjC">
-            <ref role="3Mxwex" to="ffeo:3IKDaVZnAxg" resolve="build.number" />
-          </node>
-          <node concept="3Mxwew" id="62bw8DmfoEO" role="3MwsjC">
-            <property role="3MwjfP" value=".zip" />
+            <property role="3MwjfP" value="com.dslfoundry.plaintextgen.zip" />
           </node>
         </node>
         <node concept="m$_wl" id="62bw8DmfoEU" role="39821P">
